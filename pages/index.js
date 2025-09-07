@@ -18,7 +18,7 @@ import AskButton from '../components/AskButton'
     import SEOHead from '../components/SEOHead'
     import Breadcrumbs from '../components/Breadcrumbs'
     import { getSEOData } from '../utils/seoConfig'
-    import { getMainPageStructuredData } from '../utils/structuredData'
+    import { getMainPageStructuredData, getFAQData } from '../utils/structuredData'
     import InlineCTA from '../components/InlineCTA'
 
 const Frame1196 = (props) => {
@@ -266,7 +266,14 @@ const Frame1196 = (props) => {
 
   const seoData = getSEOData('/')
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://remont-stiralok.vercel.app'
-  const structuredData = getMainPageStructuredData(baseUrl)
+  const faqItems = [
+    { question: 'Сколько времени занимает ремонт?', answer: '99% поломок устраняем на месте за 30–60 минут. Редкие случаи требуют заказа деталей и повторного визита 1–2 дня.' },
+    { question: 'Какую гарантию вы предоставляете?', answer: 'На все виды работ — 6 месяцев, на заменённые запчасти — 1 год. Гарантийный талон выдаём после ремонта.' },
+    { question: 'Сколько стоит диагностика?', answer: 'Диагностика — 200 грн. При согласии на ремонт эта сумма входит в стоимость работ. Выезд мастера бесплатный.' },
+    { question: 'Будет ли у мастера нужные детали?', answer: 'Мастер возит базовый набор популярных запчастей. Редкие детали заказываем за 1–2 дня, согласовываем по телефону.' },
+    { question: 'Дешевле отре��онтировать или заменить?', answer: 'Если стоимость ремонта превышает 60% цены новой машины, выгоднее заменить. Мы честно консультируем по целесообразности.' }
+  ]
+  const structuredData = [...getMainPageStructuredData(baseUrl), getFAQData(faqItems)]
 
   return (
     <>
@@ -310,7 +317,7 @@ const Frame1196 = (props) => {
                     ></path>
                   </svg>
                 </div>
-                <div className="frame1196-image15"><Image alt="Стиральная машина не сливает воду" src="/problems 2/11-300h.webp" fill sizes="149px" quality={100} priority loading="eager" style={{ objectFit: 'cover' }} /></div>
+                <div className="frame1196-image15"><Image alt="Стиральная машина не сливает во��у" src="/problems 2/11-300h.webp" fill sizes="149px" quality={100} priority loading="eager" style={{ objectFit: 'cover' }} /></div>
               </a>
             </Link>
             <Link legacyBehavior href="/negreetvodu">
@@ -336,7 +343,7 @@ const Frame1196 = (props) => {
             </Link>
             <Link legacyBehavior href="/protekaet">
               <a className="frame1196-container115">
-                <p className="frame1196-text114">Стиральная машина протекает</p>
+                <p className="frame1196-text114">Стир��льная машина протекает</p>
                 <div className="frame1196-arrow12">
                   <svg
                     width="32"
@@ -511,7 +518,7 @@ const Frame1196 = (props) => {
             </span>
             <br className="frame1196-text127" />
             <span className="frame1196-text128">
-              Профессионально устраняем любые неисправности стиральных машин —
+              Пр��фессионально устраняем любые неисправности стиральных машин —
               от самых простых до самых сложных.
             </span>
             <br className="frame1196-text129" />
@@ -1001,7 +1008,7 @@ const Frame1196 = (props) => {
               text3={
                 <Fragment>
                   <span className="frame1196-text162">
-                    <span>Вызвать мастера</span>
+                    <span>Вы��вать мастера</span>
                   </span>
                 </Fragment>
               }
@@ -1077,14 +1084,14 @@ const Frame1196 = (props) => {
               text={
                 <Fragment>
                   <span className="frame1196-text171">
-                    <span>Замена сливного насоса (с учетом стоимости насоса)</span>
+                    <span>Замена сливного насоса (�� учетом стоимости насоса)</span>
                   </span>
                 </Fragment>
               }
               text1={
                 <Fragment>
                   <span className="frame1196-text172">
-                    <span>от 450 грн</span>
+                    <span>о�� 450 грн</span>
                   </span>
                 </Fragment>
               }
@@ -1388,7 +1395,7 @@ const Frame1196 = (props) => {
               text3={
                 <Fragment>
                   <span className="frame1196-text210">
-                    <span>Вызвать мастера</span>
+                    <span>Вызват�� мастера</span>
                   </span>
                 </Fragment>
               }
@@ -1733,7 +1740,7 @@ const Frame1196 = (props) => {
               </div>
               <div className="item">
                 <Image
-                  alt="Ремонт стиральных машин Indesit в Одессе - профессиональный сервис"
+                  alt="Ремонт стиральных машин Indesit в Одессе - професс��ональный сервис"
                   src="/brands/image%203823130-200h.webp"
                   loading="eager"
                   className="frame1196-image44"
@@ -1745,7 +1752,7 @@ const Frame1196 = (props) => {
               </div>
               <div className="item">
                 <Image
-                  alt="Ремонт стиральных машин LG в Одессе - профессиональный сервис"
+                  alt="Ремонт стиральных машин LG �� Одессе - профессиональный сервис"
                   src="/brands/lg-logo%201-200h.webp"
                   loading="eager"
                   className="frame1196-image45"
@@ -1859,7 +1866,7 @@ const Frame1196 = (props) => {
                 </h3>
                 <Link href="/vikup">
                   <button type="button" className="frame1196-button2 button">
-                    <span>Выкуп б/у машин</span>
+                    <span>Выкуп б/у ма��ин</span>
                   </button>
                 </Link>
               </div>
@@ -2785,7 +2792,7 @@ const Frame1196 = (props) => {
                 <p className="frame1196-text227">
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: 'Подтверждаем надёжность ремонта длительным сроком гарантии.',
+                      __html: 'Подтверждаем надёжность ремонта длительным сроком г��рантии.',
                     }}
                   ></span>
                 </p>
@@ -2864,9 +2871,11 @@ const Frame1196 = (props) => {
         <section className="kyiv-discount-wrapper">
           <div className="kyiv-discount-inner">
             <div className="kyiv-discount-content">
-              <h2 className="kyiv-discount-title">Скидка 10% на ремонт</h2>
-              <p className="kyiv-discount-time">с {formatTime(kyivRange.start)} до {formatTime(kyivRange.end)}</p>
-              <p className="kyiv-discount-sub">Перезвоним в течение 2 минут</p>
+              <div className="kyiv-discount-heading">
+                <h2 className="kyiv-discount-title">Скидка 10% на ремонт</h2>
+                <p className="kyiv-discount-time">с {formatTime(kyivRange.start)} до {formatTime(kyivRange.end)}</p>
+              </div>
+              <p className="kyiv-discount-sub">Перезвоним в течение 3 минут</p>
               <form className="kyiv-discount-form" onSubmit={handleDiscountSubmit}>
                 <div className="kyiv-phone-group">
                   <span className="kyiv-phone-prefix">+380</span>
@@ -3229,7 +3238,7 @@ const Frame1196 = (props) => {
               >
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: 'Сколько времени занимает ремонт?',
+                    __html: 'Сколько времени занимае�� ремонт?',
                   }}
                 ></span>
               </h3>
@@ -3238,7 +3247,7 @@ const Frame1196 = (props) => {
               <p className="frame1196-text240">
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: '99% поломок устраняем на месте за 30-60 минут. Только редкие случаи требуют заказа специфических деталей и повторного визита через 1-2 дня',
+                    __html: '99% поломок устраняем на месте за 30-60 минут. Только редкие случаи требуют заказа специфических деталей и повторн��го визита через 1-2 дня',
                   }}
                 ></span>
               </p>
@@ -3291,7 +3300,7 @@ const Frame1196 = (props) => {
                 <p className="frame1196-text242">
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: 'На все виды работ даем гарантию 6 месяцев, на замененые запчасти - 1 год. Гарантийный талон выдается сразу после завершения ремонта',
+                      __html: 'На все виды работ даем гарантию 6 месяцев, на замененые запчасти - 1 год. Г��рантийный талон выдается сразу после завершения ремонта',
                     }}
                   ></span>
                 </p>
@@ -3344,7 +3353,7 @@ const Frame1196 = (props) => {
                 <p className="frame1196-text244">
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: 'Диагностика стоит 200 гривен. При согласии на ремонт стоимость диагоностики засчитывается в общую сумму работ. Выезд мастера бесплатный',
+                      __html: 'Диагностика стоит 200 гривен. При согласии на ремонт стоимость ди��гоностики засчитывается в общую сумму работ. Выезд мастера бесплатный',
                     }}
                   ></span>
                 </p>
@@ -3397,7 +3406,7 @@ const Frame1196 = (props) => {
                 <p className="frame1196-text246">
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: 'Мастер возит базовый набор популярных запчастей. Для редких моделей заказываем детали за 1-2 дня. проверяем наличие по телефону заранее.',
+                      __html: 'Мастер возит базовый набор популярных запчастей. Для редких мод��лей заказываем детали за 1-2 дня. проверяем наличие по телефону заранее.',
                     }}
                   ></span>
                 </p>
@@ -3532,7 +3541,7 @@ const Frame1196 = (props) => {
           <strong className="frame1196-text249">
             <span className="faq-help-line">
               <span className="faq-help-question">Остались вопросы?</span>{' '}
-              <span className="faq-help-action">Спросите мастера бесплатно</span>
+              <span className="faq-help-action">Спросите ма��тера бесплатно</span>
             </span>
           </strong>
         </div>
@@ -3548,14 +3557,14 @@ const Frame1196 = (props) => {
         <div className="frame1196-container225">
           <div className="frame1196-container226">
             <span className="textglavitogi frame1196-text250">
-              <span>Ремонт стиральных машин в сервисном центре "Ваше название" в Одессе</span>
+              <span>Ремонт стиральных машин в сервис��ом центре "Ваше название" в Одессе</span>
             </span>
           </div>
           <p className="frame1196-text251 textITOGI">
-              <span>Стиральная машина — это техника, которая должна работать исправно: отжимать, стирать и радовать стабильностью. Но на практике даже самая надёжная техника со временем требует внимания. Механические детали изнашиваются, электроника даёт сбои, а бытовая нагрузка делает своё дело. Вот почему ремонт стиральных машин в Одессе — это не просто разовая услуга, а реальная необходимость для большинства владельцев. Важно доверить ремонт проверенным специалистам, а не случайному мастеру.</span>
+              <span>Стиральная машина — это техника, которая должна работать исправно: отжимать, стирать и радовать стабильностью. Но на практике даже самая надёжная техника со временем требует внимания. Механические детали изнашиваются, электроника даёт сбои, а бытовая нагрузка делает своё дело. Вот почему ремонт стиральных машин в Одессе — это не просто разовая услуга, а реальная необходимость для большинства владельцев. Важно доверить ремонт проверенным специалист��м, а не случайному мастеру.</span>
           </p>
           <p className="frame1196-text252 textITOGI">
-              <span>Под брендом "Ваше Название" работает команда мастеров, каждый из которых занимается ремонтом стиральных машин более семи лет. Мы об��чались у лучших, прошли сертификацию, посещали техкурсы и накопили опыт работы с техникой любых поколений. Сегодня мы предлагаем ремонт стиральных машин в Одессе с гарантией, использованием оригинальных запчастей и вниманием к каждой детали. В нашем распоряжении — профессионально оснащённая мастерская, склад комплектующих и выездной сервис. Мы находим даже редки�� детали и точно знаем, как продлить жизнь вашей технике.</span>
+              <span>Под брендом "Ваше Название" работает команда мастеров, каждый из которых занимается ре��онтом стиральных машин более семи лет. Мы об��чались у лучших, прошли сертификацию, посещали техкурсы и накопили опыт р��боты с техникой любых поколений. Сегодня мы предлагаем ремонт стиральных машин в Одессе с гарантией, использованием оригинальных запчастей и вниманием к каждой детали. В нашем распоряжении — профессионально оснащённая мастерская, склад комп��ектующих и выездной сервис. Мы находим даже редки�� детали и точно знаем, как продлить жизнь вашей технике.</span>
           </p>
           <h2 className="textglavitogi">
             <span>Почему выбирают нас</span>
@@ -3583,7 +3592,7 @@ const Frame1196 = (props) => {
               <span className="textITOGI">
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: 'В штате только опытные мастера с профильной подготовкой.',
+                    __html: 'В шт��те только опытные мастера с профильной подготовкой.',
                   }}
                 ></span>
               </span>
@@ -3613,7 +3622,7 @@ const Frame1196 = (props) => {
           <p className="frame1196-text260 textITOGI">
             <span
               dangerouslySetInnerHTML={{
-                  __html: 'Ремонт стиральных машин в Одессе необходим как новым, так и давно использованным моделям. Все узлы техники имеют ограниченный ресурс, и при активной эксплуатации однажды выходят из строя. Мы собрали самые частые причины, по которым клиенты обращаются в наш сервис:',
+                  __html: 'Ремонт стиральных машин в Одессе необходим как новым, так и давно использованным моделям. Все узлы техники имеют ограниченный ресурс, и при активной э��сплуатации однажды выходят из строя. Мы собрали самые частые причины, по которым клиенты обращаются в наш сервис:',
               }}
             ></span>
           </p>
@@ -3622,7 +3631,7 @@ const Frame1196 = (props) => {
               <span className="textITOGI">
                 <span
                   dangerouslySetInnerHTML={{
-                      __html: 'Машина не сливает воду — проблема с помпой или засор сливной системы.',
+                      __html: 'Машина не сливает вод�� — проблема с помпой или засор сливной системы.',
                   }}
                 ></span>
               </span>
@@ -3693,14 +3702,14 @@ const Frame1196 = (props) => {
           </h2>
           <p className="frame1196-text271 textITOGI">
             <span>
-                Сервисный центр "Ваше название" — это современная профессиональная мастерская в Одессе, где выполняются все виды ремонта: от быстрой замены деталей до полного восстановления после серьёзных поломок. Мы берёмся за любую технику: от массовых моделей до премиум-сегмента.Выполняем замену амортизаторов, подшипников, сливных насосов, управляющих модулей, датчиков, ТЭНов. Также восстанавливаем герметичность, меняем люки, устраняем вибрации и посторонние шумы. Проводим профилактику и глубокую чистку барабана и бака.Каждый ремонт начинается с диагностики — мастер объясняет, в чём проблема, и предлагает решение. Только после согласования с клиентом мы приступаем к работе. Мы ценим доверие и работаем аккуратно — без спешки и халтуры.
+                Сервисный центр "Ваше название" — это современная профессиональная мастерская в Одессе, где выполняются все виды ремонта: от быст��ой замены деталей до полного восстановления после серьёзных поломок. Мы берёмся за любую технику: от массовых м��делей до премиум-сегмента.Выполняем замену амортизаторов, подшипников, сливных насосов, управляющих моду��ей, датчиков, ТЭНов. Также восстанавливаем герметичность, меняем люки, устраняе�� вибрации и посторонние шумы. Проводим профилактику и глубокую чистку барабана и бака.Каждый ремонт начинается с диагностики — мастер объясняет, в чём проблема, и предлагает решение. Только после согласования с клиентом мы приступаем к работе. Мы ценим доверие и работаем аккуратно — без спешки и халтуры.
             </span>
           </p>
           <h2 className="textglavitogi">
             <span>Контакты</span>
           </h2>
           <p className="textITOGI">
-              <span>Ниже на сайте — карта проезда к нашей мастерской, а также наши телефоны. Звоните для записи, консультации или если заметили сбои в работе вашей стиральной машины. Мы всё объясним, рассчитаем стоимость и поможем."Ваше название" — это ремонт стиральных машин в Одессе быстро, надёжно и профессионально.</span>
+              <span>Ниже на сайте — ��арта проезда к нашей мастерской, а также наши телефоны. Звоните для записи, консультации или если заметили сбои в работе вашей стиральной машины. Мы всё объясним, рассчитаем стоимость и поможем."Ваше название" — это ремонт стиральных машин в Одессе быстро, надёжно и профессионально.</span>
           </p>
         </div>
         )}
@@ -3745,7 +3754,7 @@ const Frame1196 = (props) => {
               className="frame1196-frame10701"
             />
             <p className="frame1196-text276">
-                Я долбоеб. я не могу жить без стиралки, потому что когда она сломана я не могу плакать на взрыд во время отжима.
+                Я долбоеб. я не могу жить без стиралки, п��тому что когда она сломана я не могу плакать на взрыд во время отжима.
             </p>
             <svg
               width="330"
@@ -3896,7 +3905,7 @@ const Frame1196 = (props) => {
               className="frame1196-frame10702"
             />
             <p className="frame1196-text278">
-                Я считаю это победа над стиральной машиной, которой 12 лет))  Очень круто!! Благодарю!! Она пала в руки мастера и отдалась ему полностью, а не стала брыкаться. не знаю, что он там с ней делал, но сейчас она как шелковая стирает мой ситцевое кружевное белье&lt;3
+                Я считаю это победа над стиральной машиной, которой 12 лет))  Очень круто!! Благодарю!! Она пала в руки мастера и отдалась ем�� полностью, а не стала брыкаться. не знаю, что он там с ней делал, но сейчас она как шелковая стирает мой ситцевое кружевное белье&lt;3
             </p>
             <svg
               width="330"
@@ -4046,7 +4055,7 @@ const Frame1196 = (props) => {
               src="/external/frame10708949-1dvi.svg"
               className="frame1196-frame10703"
             />
-            <p className="frame1196-text280">Обожаю стирать руками</p>
+            <p className="frame1196-text280">Обож��ю стирать руками</p>
             <svg
               width="330"
               xmlns="http://www.w3.org/2000/svg"
@@ -4199,25 +4208,29 @@ const Frame1196 = (props) => {
           }
 
           /* Kyiv discount banner */
-          .kyiv-discount-wrapper { width: 100%; display: flex; justify-content: center; margin: 24px 0; }
-          .kyiv-discount-inner { width: 100%; max-width: 1000px; min-height: 350px; background: #87ceeb; border-radius: 12px; display: flex; align-items: center; justify-content: flex-start; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,.08); position: relative; overflow: hidden; }
+          .kyiv-discount-wrapper { width: 100%; display: flex; justify-content: center; margin: 24px 20px 124px; }
+          .kyiv-discount-inner { width: 1000px; height: 325px; background: #87CEEB; border-radius: 12px; display: flex; align-items: center; justify-content: flex-start; padding: 28px; padding-left: 71px; box-shadow: 0 10px 30px rgba(0,0,0,.08); position: relative; overflow: visible; }
           .kyiv-discount-content { max-width: 540px; display: flex; flex-direction: column; gap: 12px; }
-          .kyiv-discount-figure { margin-left: auto; height: 100%; display: flex; align-items: flex-end; }
-          .kyiv-discount-img { height: 320px; width: auto; object-fit: contain; }
-          .kyiv-discount-title { margin: 0; font-size: 28px; font-family: var(--font-nunito); font-weight: 600; color: #ffffff; }
-          .kyiv-discount-time { margin: 0; font-size: 20px; font-family: var(--font-nunito); font-weight: 700; color: #FFD84D; }
-          .kyiv-discount-sub { margin: 4px 0 12px; font-size: 14px; color: #ffffff; opacity: 0.92; font-family: var(--font-nunito); }
+          .kyiv-discount-heading { display: flex; flex-direction: column; gap: 6px; }
+          .kyiv-discount-figure { margin-left: auto; height: 100%; display: flex; align-items: flex-end; padding-right: 50px; position: relative; }
+          .kyiv-discount-img { height: 380px; width: auto; object-fit: contain; margin-bottom: -27px; position: relative; z-index: 1; }
+          .kyiv-discount-title { margin: 0; font-size: 28px; font-family: var(--font-roboto); font-weight: 400; color: #ffffff; }
+          .kyiv-discount-time { margin: 0; font-size: 28px; font-family: var(--font-roboto); font-weight: 400; color: #FFD84D; }
+          .kyiv-discount-sub { margin: 12px 0; font-size: 14px; color: #ffffff; opacity: 0.92; font-family: var(--font-nunito); }
           .kyiv-discount-form { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+          .kyiv-phone-group { flex: 1 1 320px; min-width: 240px; }
+          .kyiv-banner-btn { flex: 1 1 320px; min-width: 240px; width: 100%; }
           .kyiv-phone-group { position: relative; }
           .kyiv-phone-prefix { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #666; font-family: var(--font-nunito); font-size: 16px; }
-          .kyiv-phone-input { padding: 12px 12px 12px 66px; font-size: 16px; border: 2px solid rgba(0,0,0,.12); border-radius: 8px; background: #ffffff; outline: none; min-width: 240px; font-family: var(--font-nunito); }
-          .kyiv-phone-input:focus { background: #fff; border-color: rgba(0,0,0,.18); }
-          .kyiv-banner-btn { height: 46px; padding: 0 18px; border: none; border-radius: 8px; background: #282828; color: #fff; cursor: pointer; font-family: var(--font-nunito); font-size: 16px; font-weight: 500; box-shadow: 5px 5px 10px rgba(43,43,43,.68); transition: transform .2s ease, box-shadow .2s ease; }
-          .kyiv-banner-btn:hover { transform: translateY(-1px); box-shadow: 5px 8px 16px rgba(43,43,43,.8); }
+          .kyiv-phone-input { padding: 12px 12px 12px 66px; font-size: 16px; border: 2px solid rgba(0,0,0,.12); border-radius: 8px; background: #ffffff; outline: none; min-width: 240px; width: 100%; font-family: var(--font-nunito); }
+          .kyiv-phone-input:focus { background-color: #E8F0FE; border-color: #ddd; border-width: 1px; box-shadow: none; }
+          .kyiv-banner-btn { height: 46px; padding: 0 18px; border: none; border-radius: 8px; background: #282828; color: #fff; cursor: pointer; font-family: var(--font-nunito); font-size: 15px; font-weight: 400; letter-spacing: 1.5px; box-shadow: 5px 5px 10px rgba(43,43,43,.68); transition: transform .2s ease, box-shadow .2s ease; }
+          .kyiv-banner-btn:hover { transform: translateY(-1px); box-shadow: 5px 8px 16px rgba(43,43,43,.8); background: #87ceeb; }
           .kyiv-status { width: 100%; font-size: 14px; color: #1b1b1b; font-family: var(--font-nunito); }
           .kyiv-honeypot { display: none; }
-          @media (max-width: 991px) { .kyiv-discount-figure { display: none; } }
-          @media (max-width: 767px) { .kyiv-discount-inner { min-height: 0; border-radius: 10px; padding: 18px; } .kyiv-discount-title { font-size: 22px; } .kyiv-discount-time { font-size: 16px; } }
+          .kyiv-discount-figure::before { content: ""; position: absolute; width: 320px; height: 260px; background: #A8D3E8; border-radius: 12px; transform: rotate(-4deg); bottom: 8px; right: 10px; z-index: 0; pointer-events: none; }
+          @media (max-width: 991px) { .kyiv-discount-figure { display: none; } .kyiv-discount-inner { max-width: 600px; width: 100%; flex-direction: column; align-items: center; justify-content: center; padding: 20px; } .kyiv-discount-content { max-width: 100%; align-items: center; text-align: center; gap: 16px; } .kyiv-discount-heading { margin-bottom: 0; gap: 6px; } .kyiv-discount-form { justify-content: center; gap: 16px; } }
+          @media (max-width: 767px) { .kyiv-discount-inner { min-height: 0; border-radius: 10px; padding: 18px; width: 100%; height: auto; max-width: 300px; } .kyiv-discount-title { font-size: 22px; } .kyiv-discount-time { font-size: 22px; } .kyiv-phone-prefix { font-size: 15px; left: 12px; } .kyiv-phone-input { padding: 10px 10px 10px 56px; font-size: 15px; min-width: 0; } .kyiv-banner-btn { height: 40px; font-size: 14px; padding: 0 14px; } .kyiv-discount-content { gap: 16px; } .kyiv-discount-heading { margin-bottom: 0; gap: 6px; } .kyiv-discount-form { gap: 18px; } .kyiv-phone-group, .kyiv-banner-btn { flex: 1 1 100%; width: 100%; } }
 
           @media (min-width: 992px) {
             .frame1196-container100 { background-image: url('/to%20the%20backgrouund-1500w.png'); }
@@ -7680,11 +7693,11 @@ const Frame1196 = (props) => {
             height: 32px;
             display: flex;
             align-items: flex-start;
-            border-color: var(--dl-color-theme-neutral-dark);
+            border-color: #444444;
             border-width: 1px;
             border-radius: var(--dl-layout-radius-round);
             justify-content: flex-start;
-            background-color: var(--dl-color-theme-neutral-dark);
+            background-color: #444444;
           }
           .frame1196-icon338 {
             fill: var(--dl-color-theme-neutral-dark);
@@ -7763,11 +7776,11 @@ const Frame1196 = (props) => {
             height: 32px;
             display: flex;
             align-items: flex-start;
-            border-color: var(--dl-color-theme-neutral-dark);
+            border-color: #444444;
             border-width: 1px;
             border-radius: var(--dl-layout-radius-round);
             justify-content: flex-start;
-            background-color: #191818;
+            background-color: #444444;
           }
           .frame1196-icon340 {
             fill: var(--dl-color-theme-neutral-dark);
@@ -7838,11 +7851,11 @@ const Frame1196 = (props) => {
             height: 32px;
             display: flex;
             align-items: flex-start;
-            border-color: var(--dl-color-theme-neutral-dark);
+            border-color: #444444;
             border-width: 1px;
             border-radius: var(--dl-layout-radius-round);
             justify-content: flex-start;
-            background-color: var(--dl-color-theme-neutral-dark);
+            background-color: #444444;
           }
           .frame1196-icon342 {
             fill: var(--dl-color-theme-neutral-dark);
@@ -7915,11 +7928,11 @@ const Frame1196 = (props) => {
             height: 31px;
             display: flex;
             align-items: flex-start;
-            border-color: var(--dl-color-theme-neutral-dark);
+            border-color: #444444;
             border-width: 1px;
             border-radius: var(--dl-layout-radius-round);
             justify-content: flex-start;
-            background-color: var(--dl-color-theme-neutral-dark);
+            background-color: #444444;
           }
           .frame1196-icon344 {
             fill: var(--dl-color-theme-neutral-dark);
@@ -7991,11 +8004,11 @@ const Frame1196 = (props) => {
             height: 32px;
             display: flex;
             align-items: flex-start;
-            border-color: var(--dl-color-theme-neutral-dark);
+            border-color: #444444;
             border-width: 1px;
             border-radius: var(--dl-layout-radius-round);
             justify-content: flex-start;
-            background-color: #191818;
+            background-color: #444444;
           }
           .frame1196-icon346 {
             fill: var(--dl-color-theme-neutral-dark);
@@ -8844,7 +8857,7 @@ const Frame1196 = (props) => {
             }
           }
 
-          /* Отдел��н���й брейкпоинт для ��едера */
+          /* Отдел��н���й ��рейкпоинт для ��едера */
           @media (max-width: 1525px) {
             .frame1196-container103 {
               gap: var(--dl-layout-space-halfunit);
@@ -10120,7 +10133,7 @@ const Frame1196 = (props) => {
               align-items: center;
               border-radius: var(--dl-layout-radius-round);
               justify-content: center;
-              background-color: #606060;
+              background-color: #444444;
             }
             .frame1196-icon328 {
               fill: var(--dl-color-theme-neutral-dark);
@@ -10134,7 +10147,7 @@ const Frame1196 = (props) => {
               align-items: center;
               border-radius: var(--dl-layout-radius-round);
               justify-content: center;
-              background-color: #606060;
+              background-color: #444444;
             }
             .frame1196-icon330 {
               fill: var(--dl-color-theme-neutral-dark);
@@ -11842,7 +11855,7 @@ const Frame1196 = (props) => {
             box-shadow: 0px 4px 15px 0px rgba(175, 160, 115, 0.4);
           }
 
-          /* Ан��мация ��азворачи������������ия и�� центр�� для ответов FAQ */
+          /* Ан��мация ��а��ворачи������������ия и�� центр�� для ответов FAQ */
           .frame1196-otvet1,
           .frame1196-otvet2,
           .frame1196-otvet3,
@@ -11913,7 +11926,7 @@ const Frame1196 = (props) => {
             fill: #4EC8ED !important;
           }
 
-          /* Пр�� нажатии ��а ��сю карточку - стрелка становится голуб��й */
+          /* Пр���� нажатии ��а ��сю карточку - стрелка становится голуб��й */
           .frame1196-container113:active .frame1196-arrow10 svg path,
           .frame1196-container114:active .frame1196-arrow11 svg path,
           .frame1196-container115:active .frame1196-arrow12 svg path,
@@ -11997,7 +12010,7 @@ const Frame1196 = (props) => {
             transition: transform 0.2s ease, filter 0.2s ease !important;
           }
 
-          /* Дополнительные hover эффект�� для текста и иконок в ������опках */
+          /* Дополнительные hover эффект�� для т��кста и иконок в ������опках */
           .frame1196-container136:hover .frame1196-text146,
           .frame1196-container140:hover .frame1196-text150,
           .frame1196-container144:hover .frame1196-text154,
@@ -12111,7 +12124,7 @@ const Frame1196 = (props) => {
             }
             p.frame1196-text240, p.frame1196-text242, p.frame1196-text244, p.frame1196-text246, p.frame1196-text248,
             .frame1196-text240, .frame1196-text242, .frame1196-text244, .frame1196-text246, .frame1196-text248 {
-              font-size: 15px !important;
+              font-size: 14px !important;
               line-height: 1.35 !important;
             }
             /* ensure answer containers don't force larger font via transform or other rules */
