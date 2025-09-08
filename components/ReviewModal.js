@@ -106,7 +106,10 @@ const ReviewModal = ({ isOpen, onClose }) => {
                   Расскажите о качестве ремонта и уровне сервиса.
                 </p>
                 <form onSubmit={handleSubmit} className="review-form">
-                  <div className="form-group">
+                  <div className="form-group input-with-icon">
+                    <span className="field-icon user-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5z"/></svg>
+                    </span>
                     <input
                       type="text"
                       name="name"
@@ -117,7 +120,10 @@ const ReviewModal = ({ isOpen, onClose }) => {
                       required
                     />
                   </div>
-                  <div className="form-group phone-input-group">
+                  <div className="form-group phone-input-group input-with-icon">
+                    <span className="field-icon phone-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 011 1V21a1 1 0 01-1 1C10.07 22 2 13.93 2 3a1 1 0 011-1h3.49a1 1 0 011 1c0 1.21.2 2.42.57 3.54a1 1 0 01-.24 1.05l-2.2 2.2z"/></svg>
+                    </span>
                     <span className="phone-prefix">+380</span>
                     <input
                       type="tel"
@@ -148,7 +154,10 @@ const ReviewModal = ({ isOpen, onClose }) => {
                       ))}
                     </div>
                   </div>
-                  <div className="form-group">
+                  <div className="form-group input-with-icon">
+                    <span className="field-icon pencil-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm2.92 2.33H5v-.92l9.06-9.06.92.92L5.92 19.58zM20.71 7.04a1.003 1.003 0 000-1.42l-2.34-2.34a1.003 1.003 0 00-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"/></svg>
+                    </span>
                     <textarea
                       name="review"
                       value={formData.review}
@@ -183,19 +192,26 @@ const ReviewModal = ({ isOpen, onClose }) => {
         .modal-description { font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 40px; font-family: var(--font-nunito), sans-serif; }
         .review-form { display: flex; flex-direction: column; gap: 25px; flex: 1; }
         .form-group { display: flex; flex-direction: column; }
+        .input-with-icon { position: relative; }
+        .field-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: #b3b3b3; pointer-events: none; transition: color 0.2s ease; display: inline-flex; align-items: center; justify-content: center; }
+        .input-with-icon:focus-within .field-icon { color: #87ceeb; }
         .rating-label { font-size: 16px; font-weight: 500; margin-bottom: 5px; color: #333; font-family: var(--font-nunito), sans-serif; }
         .star-rating { display: flex; gap: 5px; }
         .star { font-size: 30px; cursor: pointer; color: #ddd; transition: all 0.3s ease; user-select: none; }
         .star:hover { transform: scale(1.1); }
         .star.filled { color: #5FCDEE; }
-        .form-input { padding: 20px; font-size: 18px; border: 2px solid #ddd; border-radius: 8px; background-color: #f9f9f9; transition: background-color 0.2s ease, border-color 0.2s ease; outline: none; font-family: var(--font-nunito), sans-serif; }
+        .form-input { padding: 20px; font-size: 18px; border: none; border-radius: 8px; background-color: #f9f9f9; transition: background-color 0.2s ease; outline: none; font-family: var(--font-nunito), sans-serif; color: #333; }
         .phone-input-group { position: relative; }
-        .phone-input-group .form-input { padding-left: 74px; }
-        .phone-prefix { position: absolute; top: 50%; left: 18px; transform: translateY(-50%); color: #999; font-size: 18px; font-family: var(--font-nunito), sans-serif; pointer-events: none; }
-        .phone-input-group:focus-within .phone-prefix { color: #000; }
-        .form-textarea { padding: 20px; font-size: 18px; border: 2px solid #ddd; border-radius: 8px; background-color: #f9f9f9; transition: background-color 0.2s ease, border-color 0.2s ease; outline: none; resize: none; min-height: 120px; font-family: var(--font-nunito), sans-serif; }
-        .form-input:focus, .form-textarea:focus { background-color: #E8F0FE; border-color: #ddd; border-width: 1px; box-shadow: none; }
-        .form-input::placeholder, .form-textarea::placeholder { color: #999; font-size: 16px; font-family: var(--font-nunito), sans-serif; }
+        .input-with-icon .form-input { padding-left: 56px; }
+        .input-with-icon .form-textarea { padding-left: 56px; }
+        .phone-input-group .form-input { padding-left: 110px; }
+        .phone-prefix { position: absolute; top: 50%; left: 54px; transform: translateY(-50%); color: #999; font-size: 18px; font-family: var(--font-nunito), sans-serif; pointer-events: none; }
+        .phone-input-group:focus-within .phone-prefix { color: #87ceeb; }
+        .form-textarea { padding: 20px; font-size: 18px; border: none; border-radius: 8px; background-color: #f9f9f9; transition: background-color 0.2s ease; outline: none; resize: none; min-height: 120px; font-family: var(--font-nunito), sans-serif; color: #333; }
+        .form-input:focus, .form-textarea:focus { background-color: #E8F0FE; box-shadow: none; }
+        .form-input:focus::placeholder, .form-textarea:focus::placeholder { color: #87ceeb; }
+        .pencil-icon { top: 28px; transform: none; }
+        .form-input::placeholder, .form-textarea::placeholder { color: #C1C1C1; font-size: 16px; font-family: var(--font-nunito), sans-serif; }
         .submit-wrapper { margin-top: 20px; display: flex; justify-content: center; }
         .honeypot-input { display: none; }
         .status-message { margin-top: 8px; text-align: center; font-family: var(--font-nunito), sans-serif; color: #333; }
@@ -206,7 +222,7 @@ const ReviewModal = ({ isOpen, onClose }) => {
         .success-button { color: #fff; font-size: 16px; font-family: var(--font-nunito); font-weight: 500; border: none; border-radius: 8px; letter-spacing: 1px; background-color: rgb(40, 40, 40); cursor: pointer; transition: all 0.3s ease; height: 55px; padding: 0 22px; box-shadow: 5px 5px 10px rgba(43,43,43,.68); }
         .success-button:hover { box-shadow: 5px 5px 15px rgba(43,43,43,.8); transform: translateY(-2px); background-color: #87ceeb; }
         .success-button:active { transform: translateY(0); box-shadow: 0 0 8px #87ceeb, 3px 3px 8px rgba(43,43,43,.9); }
-        @media (max-width: 768px) { .modal-content { width: 90%; height: auto; max-height: 90%; margin: 16px; padding: 20px; border-radius: 12px; animation: slideInUp 0.3s ease-out; } @keyframes slideInUp { from { transform: translateY(100%); } to { transform: translateY(0); } } .modal-overlay { justify-content: center; padding: 10px; } .modal-header { margin-bottom: 15px; padding-bottom: 15px; } .modal-header h2 { font-size: 18px; } .modal-description { font-size: 15px; margin-bottom: 15px; } .review-form { gap: 12px; } .form-input, .form-textarea { padding: 11px; font-size: 15px; } .phone-input-group .form-input { padding-left: 60px; } .phone-prefix { left: 14px; font-size: 15px; } .form-input::placeholder, .form-textarea::placeholder { font-size: 15px; } .submit-wrapper { margin-top: 10px; } }
+        @media (max-width: 768px) { .modal-content { width: 90%; height: auto; max-height: 90%; margin: 16px; padding: 20px; border-radius: 12px; animation: slideInUp 0.3s ease-out; } @keyframes slideInUp { from { transform: translateY(100%); } to { transform: translateY(0); } } .modal-overlay { justify-content: center; padding: 10px; } .modal-header { margin-bottom: 15px; padding-bottom: 15px; } .modal-header h2 { font-size: 18px; } .modal-description { font-size: 15px; margin-bottom: 15px; } .review-form { gap: 12px; } .form-input, .form-textarea { padding: 11px; font-size: 15px; } .input-with-icon .form-input, .input-with-icon .form-textarea { padding-left: 46px; } .phone-input-group .form-input { padding-left: 96px; } .phone-prefix { left: 42px; font-size: 15px; } .form-input::placeholder, .form-textarea::placeholder { font-size: 15px; } .submit-wrapper { margin-top: 10px; } }
       `}</style>
     </>
   )
